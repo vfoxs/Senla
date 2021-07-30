@@ -1,0 +1,198 @@
+<html>
+<head>
+    <title>Page1</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Сайт об HTML"> 
+    <meta name="keywords" content="HTML, CSS">
+    <meta http-equiv="refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {background-color: rgb(239, 246, 255);}
+    </style>
+
+</head>
+<body>
+    <u><h2 align="center">Table </h2></u>
+    <table border=5 bordercolor=red align="center">
+        <tr>
+            <th colspan=2 background=yellow> <b><i><h1>Личная информация </b></i></h1></th>
+            <th colspan=2 background=yellow><b><i><h1>Служебная информация</b></i></h1> </th>
+        </tr>
+        <tr> 
+            <th><font color='green'face=Odessa >Фамилия</font></th>
+            <th><font color='green'face=Odessa Script>Фото</font></th>
+            <th><font color='green'face=Odessa Script>Место работы</font></th>
+            <th><font color='green'face=Odessa Script>Адрес</font></th>
+        </tr>
+        <tr>
+            <th rowspan=3> Иванов</th>
+            <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </th>
+            <th>МГТУ</th>
+            <th rowspan=2> Баженова,4</th>
+        </tr>
+        <tr>
+             <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </th>  
+             <th>МГТУ</th>
+        </tr>
+        <tr>
+            <th bgcolor=pink>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th> 
+            <th colspan=2>Безработный </th>
+        </tr>
+        <tr>
+            <th><br><br><br><br></th> 
+            <th><br><br><br><br></th>
+            <th colspan=2><br><br><br><br></th>    
+        </tr>
+        <tr><th bgcolor=#b8d3ff colspan=4>Увлечения </th></tr>
+        <tr> <th colspan=4 Align=left >&nbsp &nbsp &nbsp &nbsp &nbsp 1.Охота <br>&nbsp &nbsp &nbsp &nbsp &nbsp 2.Рыбалка<br>&nbsp &nbsp &nbsp &nbsp &nbsp 3.Театр<br></th>
+        </tr>
+    </table>
+
+    <center><p><h2><b>Table 2</b></h2></p></center>
+
+    <table border=2 align=center>
+    <tr >
+        <th colspan=2 bgcolor=gray>
+            <marquee slide direction=left><u>Путешествие по Европе</u><br></marquee>
+        </th>
+    </tr>
+    <tr>   
+        <td>
+            <ol><li>Европа<br>
+                1.1. Франция</li>
+            <ul>
+                <li>Париж</li>
+                <li>Марсель</li>
+                <li>Бордо</li>
+            </ul>
+                1.2. Германия
+            <ul>
+                <li>Мюнхен</li>
+                <li>Дрезден</li>
+            </ul>
+            <br>
+            <li>Европа<br>
+                2.1. Испания</li>
+            <ul type="disc">
+                <li>Мадрид</li>
+                <li>Барселона</li>
+                <li>Салоу</li>
+            </ul>
+        </td>
+        <td background="img1.jpg">
+                3. Европа<br>
+                3.1. Италия
+            <ul type="square">
+                <li>Рим</li>
+                <li>Венеция</li>
+                <li>Флоренция</li>
+            </ul>
+            <br>
+            <br>
+            <img border=1 src="img2.jpg" widht="100" height="100">
+        </td>
+    </tr>
+    </table>
+
+    <p><a href="terms.html">Словарь терминов</a></p>
+
+    <center> <font align="center"><B> Покупка авиабилетов</b></font></center><br>
+    <table  border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <td>Фамилия</td>
+            <td><input placeholder="Введите фамилию" required type="text" pattern="[A-Za-zА-Яа-яЁё]" autocomplete="on | off" name="name" size="15" maxlength="15"></td>
+        </tr>
+        <tr>
+            <td>Имя</td>
+            <td><input placeholder="Введите имя" type="text" pattern="^[А-Яа-яЁё\s]+$" name="name" autocomplete="on | off" required size="15" maxlength="15"></td>
+        </tr>
+        <tr>
+            <td>Пол</td>
+            <td><input type="radio" name="sex" required value="man" checked>М
+                <input type="radio" name="sex" required value="woman">Ж </td>
+        </tr>
+        <tr>
+            <td>Выберите страну пребывания</td>
+            <td><select name="city" size="1"> 
+                <option selected value="1" required>Америка
+                <option value="2" >Куба
+                <option value="3">Мексика
+                <option value="4">Гватемала
+                <option value="5">Перу 
+                </select></td>
+        </tr>
+        <tr>
+            <td>Введите количество дней пребывания</td>
+            <td><input type="number" pattern="^[ 0-9]+$" name=" day" required size="10" min="1" max="100"></td>
+        </tr>
+        <tr>
+            <td>Аэропорт прилета</td>
+            <td><select name="city" required size="1"> 
+                <optgroup label="Америка">
+                    <option value="1">Аэропорт Бойсе</option>
+                    <option value="2">Аэропорт Бетел</option>
+                    <option value="3">Аэропорт Якутат</option>
+                <optgroup label="Куба">
+                    <option value="1">Варадеро</option>
+                    <option value="2">Гаванс</option>
+                <optgroup label="Гватемала">
+                    <option value="1">Аврора</option>
+                </optgroup>
+                </select></td>
+        </tr>
+       </table>
+       
+        <form name="forma1">
+            <center><fieldset><legend> Оформление заказа</legend>
+                <table  border="0" cellspacing="5" cellpadding="5">
+                    <tr><td>Контактное лицо</td>
+                        <td><input placeholder="Введите ФИО" type="text" name="name" required size="10" maxlength="20"></td>
+                        <td>e-mail</td>
+                        <td><input placeholder="Введите почту" type="email"  name="name" required size="10" maxlength="20"></td>
+                    </tr>
+                    <tr><td>Телефон</td>
+                        <td><input id="telephone" placeholder="+7 (xxx) xxx-xxxx" required size="10" maxlength="20"></td>
+                        <td>Ваш адрес</td>
+                        <td><input placeholder="Введите адрес" type="text" name="name"  required size="10" maxlength="20"></td>
+                    </tr>
+                </table><br>
+
+            <font><B> Выберете дату и время вылета</b></font><br><br>
+                <table  border="0">
+                    <tr><td>Дата вылета</td>
+                        <td> <input type="date" name="date" required size="10" maxlength="20" value=""></td>
+                    </tr>
+                    <tr><td>Время вылета</td>
+                        <td> <input type="time" name="time" required size="10" maxlength="20" value=""></td>
+                    </tr>
+                </table><br>
+       
+            <font><B> Оплата</b></font><br>
+                <table  border="0">
+                    <tr><td><input type="radio" name="s" required value="nal" checked>Наличными
+                        <input type="radio" name="s" required  value="car">По карте </td>
+                    </tr>
+                    <tr><td>Имя владельца карты</td>
+                        <td><input placeholder="Введите имя" type="text"  name="name" required size="10" maxlength="40"></td>
+                    </tr>
+                    <tr><td>Номер карты</td>
+                        <td><input type="password" name="name" autocomplete="on | off" required size="10" maxlength="16"></td>
+                    </tr>
+                    <tr><td>CIV-код карты</td>
+                        <td><input type="password"  pattern="[0-9]{,3}"  autocomplete="on | off" name="name" required size="10" maxlength="3"></td>
+                    </tr>
+                    <tr><td>Дата действия карты</td>
+                        <td><input type="date" type="date" autocomplete="on | off" name="name" required size="10" maxlength="4"></td>
+                    </tr>
+                </table>
+        </form>
+       
+        <table>
+            <tr><td align="right" colspan="2">
+                <input type="submit" name="submit" value="Обработать"></td>
+                <td><input type="reset" name="reset" value="Очистить"></td>
+            </tr>
+        </table>
+</body>
+</html>
