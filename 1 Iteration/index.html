@@ -1,11 +1,13 @@
-<html>
+<html lang="ru">
 <head>
     <title>Page1</title>
     <meta charset="utf-8">
     <meta name="description" content="Сайт об HTML"> 
-    <meta name="keywords" content="HTML, CSS">
-    <meta http-equiv="refresh" content="60">
+    <meta name="keywords" content="HTML,CSS">
+    <meta name="author" content="html5css">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
     <link rel="stylesheet" type="text" href="style.css">
     <style>
         body {background-color: rgb(239, 246, 255);}
@@ -108,8 +110,10 @@
         </tr>
         <tr>
             <td>Пол</td>
-            <td><input type="radio" name="sex" required value="man" checked>М
-                <input type="radio" name="sex" required value="woman">Ж </td>
+            <td><label for = "man">М</label>
+                <input type="radio" name="sex" required value="man" checked>
+                <label for = "women">Ж</label>
+                <input type="radio" name="sex" required value="woman"></td>
         </tr>
         <tr>
             <td>Выберите страну пребывания</td>
@@ -153,7 +157,7 @@
                     <tr><td>Телефон</td>
                         <td><input id="telephone" placeholder="+7 (xxx) xxx-xxxx" required size="10" maxlength="20"></td>
                         <td>Ваш адрес</td>
-                        <td><input placeholder="Введите адрес" type="text" name="name"  required size="10" maxlength="20"></td>
+                        <td><textarea name=address rows="3" cols="11" placeholder="Введите адрес"></textarea></td>
                     </tr>
                 </table><br>
 
@@ -173,16 +177,16 @@
                         <input type="radio" name="s" required  value="car">По карте </td>
                     </tr>
                     <tr><td>Имя владельца карты</td>
-                        <td><input placeholder="Введите имя" type="text"  name="name" required size="10" maxlength="40"></td>
+                        <td><input placeholder="Введите имя" type="text"  name="name" required size="10" maxlength="40" autocomplete="on"></td>
                     </tr>
                     <tr><td>Номер карты</td>
-                        <td><input type="password" name="name" autocomplete="on | off" required size="10" maxlength="16"></td>
+                        <td><input type="password" name="name" autocomplete="off" required size="10" maxlength="16"></td>
                     </tr>
                     <tr><td>CIV-код карты</td>
-                        <td><input type="password"  pattern="[0-9]{,3}"  autocomplete="on | off" name="name" required size="10" maxlength="3"></td>
+                        <td><input type="password"  pattern="[0-9]{,3}"  autocomplete="off" name="name" required size="10" maxlength="3"></td>
                     </tr>
                     <tr><td>Дата действия карты</td>
-                        <td><input type="date" type="date" autocomplete="on | off" name="name" required size="10" maxlength="4"></td>
+                        <td><input type="date" type="date" autocomplete="off" name="name" required size="10" maxlength="4"></td>
                     </tr>
                 </table>
         </form>
