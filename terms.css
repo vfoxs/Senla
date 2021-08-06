@@ -1,0 +1,44 @@
+.html{
+    text-align: center;
+}
+.menu{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    background:rgb(210, 225, 253);
+    height: 50px;
+}
+.menu a{
+    text-decoration: none;
+    background:rgb(210, 225, 253);
+    color:rgb(0, 0, 0);
+    padding:0px 15px;
+    line-height:50px;
+    display: block; 
+    border-right: 1px solid rgb(103, 156, 255);
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+.menu a:hover {
+    background:rgb(31, 89, 196, 0.5);
+}
+.menu li {
+    float:left;
+}
+.submit{
+    text-decoration: none;
+    border: 0px;
+    background:rgb(210, 225, 253);
+    color:rgb(0, 0, 0);
+    padding:0px 15px;
+    line-height:50px;
+    display: block; 
+    border-right: 1px solid rgb(103, 156, 255);
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;  
+}
+.submit:hover {
+    background:rgb(31, 89, 196, 0.5);
+}
