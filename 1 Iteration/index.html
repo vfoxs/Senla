@@ -10,16 +10,22 @@
     <meta http-equiv="refresh" content="60">
     <link rel="stylesheet" type="text" href="style.css">
     <style>
-        body {background-color: rgb(239, 246, 255);}
+        body
+        {background-color: rgb(239, 246, 255);
+        }
     </style>
 </head>
 <body>
+    <center><p><h1>HTML</h1></p></center>
     <u><h2 align="center">Table </h2></u>
     <table border=5 bordercolor=red align="center">
+        <thead>
         <tr>
-            <th colspan=2 background=yellow> <b><i><h1>Личная информация </b></i></h1></th>
-            <th colspan=2 background=yellow><b><i><h1>Служебная информация</b></i></h1> </th>
+            <th colspan=2><i>Личная информация</i></th>
+            <th colspan=2><i>Служебная информация</i></th>
         </tr>
+        </thead>
+        <tbody>
         <tr> 
             <th><font color='green'face=Odessa >Фамилия</font></th>
             <th><font color='green'face=Odessa Script>Фото</font></th>
@@ -45,19 +51,25 @@
             <th><br><br><br><br></th>
             <th colspan=2><br><br><br><br></th>    
         </tr>
+        </tbody>
+        <tfoot>
         <tr><th bgcolor=#b8d3ff colspan=4>Увлечения </th></tr>
         <tr> <th colspan=4 Align=left >&nbsp &nbsp &nbsp &nbsp &nbsp 1.Охота <br>&nbsp &nbsp &nbsp &nbsp &nbsp 2.Рыбалка<br>&nbsp &nbsp &nbsp &nbsp &nbsp 3.Театр<br></th>
         </tr>
+        </tfoot>
     </table>
 
     <center><p><h2><b>Table 2</b></h2></p></center>
 
     <table border=2 align=center>
+    <thead>
     <tr >
         <th colspan=2 bgcolor=gray>
             <marquee slide direction=left><u>Путешествие по Европе</u><br></marquee>
         </th>
     </tr>
+    </thead>
+    <tbody>
     <tr>   
         <td>
             <ol><li>Европа<br>
@@ -91,15 +103,17 @@
             </ul>
             <br>
             <br>
-            <img border=1 src="img2.jpg" widht="100" height="100">
+            <img border=1 src="img2.jpg" widht="100" height="100" alt="Путешествие по Европе" title="Путешествие по Европе">
         </td>
     </tr>
+    </tbody>
     </table>
 
     <p><a href="terms.html">Словарь терминов</a></p>
 
     <center> <font align="center"><B> Покупка авиабилетов</b></font></center><br>
-    <table  border="0" cellspacing="5" cellpadding="5">
+    <table  border="0" cellspacing="5" cellpadding="5" align="center">
+        <tbody>
         <tr>
             <td>Фамилия</td>
             <td><input placeholder="Введите фамилию" required type="text" pattern="[A-Za-zА-Яа-яЁё]" autocomplete="on | off" name="name" size="15" maxlength="15"></td>
@@ -110,7 +124,7 @@
         </tr>
         <tr>
             <td>Пол</td>
-            <td><label for = "man">М</label>
+            <td><label for = "man">М </label>
                 <input type="radio" name="sex" required value="man" checked>
                 <label for = "women">Ж</label>
                 <input type="radio" name="sex" required value="woman"></td>
@@ -144,11 +158,16 @@
                 </optgroup>
                 </select></td>
         </tr>
-       </table>
+        <tr>
+            <td><input type="checkbox">Только прямые рейсы</td>
+        </tr>
+        </tbody>
+    </table>
        
         <form name="forma1">
             <center><fieldset><legend> Оформление заказа</legend>
                 <table  border="0" cellspacing="5" cellpadding="5">
+                    <tbody>
                     <tr><td>Контактное лицо</td>
                         <td><input placeholder="Введите ФИО" type="text" name="name" required size="10" maxlength="20"></td>
                         <td>e-mail</td>
@@ -159,20 +178,24 @@
                         <td>Ваш адрес</td>
                         <td><textarea name=address rows="3" cols="11" placeholder="Введите адрес"></textarea></td>
                     </tr>
+                    </tbody>
                 </table><br>
 
-            <font><B> Выберете дату и время вылета</b></font><br><br>
+            <font><b> Выберете дату и время вылета</b></font><br><br>
                 <table  border="0">
+                    <tbody>
                     <tr><td>Дата вылета</td>
                         <td> <input type="date" name="date" required size="10" maxlength="20" value=""></td>
                     </tr>
                     <tr><td>Время вылета</td>
                         <td> <input type="time" name="time" required size="10" maxlength="20" value=""></td>
                     </tr>
+                    </tbody>
                 </table><br>
        
-            <font><B> Оплата</b></font><br>
+            <font><b> Оплата</b></font><br>
                 <table  border="0">
+                    <tbody>
                     <tr><td><input type="radio" name="s" required value="nal" checked>Наличными
                         <input type="radio" name="s" required  value="car">По карте </td>
                     </tr>
@@ -188,14 +211,17 @@
                     <tr><td>Дата действия карты</td>
                         <td><input type="date" type="date" autocomplete="off" name="name" required size="10" maxlength="4"></td>
                     </tr>
+                    </tbody>
                 </table>
         </form>
        
         <table>
+            <tbody>
             <tr><td align="right" colspan="2">
                 <input type="submit" name="submit" value="Обработать"></td>
                 <td><input type="reset" name="reset" value="Очистить"></td>
             </tr>
+            </tbody>
         </table>
 </body>
 </html>
