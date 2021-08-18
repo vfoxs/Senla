@@ -1,11 +1,11 @@
 #grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 1fr 100px 1fr;
+    grid-template-rows: 50px 1fr 10vw 1fr;
     grid-template-areas: 
         "nav nav nav"
         "section section section"
-        "aside1 aside2 aside3"
+        "aside aside aside"
         "main main main";
     height: 100vw;
     position: relative;
@@ -14,15 +14,28 @@
 }
 #mainNav{
     grid-area: nav;
+    
 }
 #pageSection{
     grid-area: section;
 }
-#aside1{
-    grid-area: aside1;
+#aside{
+    grid-area: aside;
     width: 100%;
-    text-align: center;
 }
+.flex{ 
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+}
+.flex > .item{
+    width: 100px;
+    height: 10vw;
+    margin: 0 20px;
+    overflow: hidden;
+    background-color: rgb(39, 157, 235);
+}
+/*
 #aside2{
     grid-area: aside2;
     width: 100%;
@@ -33,16 +46,17 @@
     width: 100%;
     text-align: center;
 }
+*/
 #pageMain{
     grid-area: main;
 }
-#grid > nav,section,aside,main{
+#grid > section,main{
     background-color: rgba(203, 221, 255, 0.3);
     text-align: center;
 }
-#grid > aside{
-    background-color: rgb(39, 157, 235);
-    text-align: center;
+html, body{
+    margin:0;
+    padding:0;
 }
 .menu{
     display: grid;
@@ -54,9 +68,13 @@
     margin: 0;
     padding-left: 0;
     background:rgb(210, 225, 253);
-    height: 50px;
+    height: 55px;
     z-index: 1;
     width: 100%;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 a{
     text-decoration: none;
@@ -251,15 +269,24 @@ ul li{
         grid-template-rows: 300px 1fr 1fr 1fr;
         grid-template-areas: 
             "section section nav"
-            "aside1 main nav"
-            "aside2 main nav"
-            "aside3 main nav";
+            "aside main nav"
+            "aside main nav"
+            "aside main nav";
         grid-column-gap: 15px;
         grid-row-gap: 40px;
     }
     #pageSection{
         grid-area: section;
         overflow-y: scroll;
+    }
+    .flex{ 
+        display: flex; 
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .flex > .item{
+        margin: 0 0 40px 0;
+        height: 1fr;
     }
     .menu{
         display: grid;
@@ -281,4 +308,5 @@ ul li{
         border-right: 0px;
         border-bottom: 1.5px solid rgb(103, 156, 255);
     }
+    
 }
