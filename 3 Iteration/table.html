@@ -1,0 +1,137 @@
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>Табличная верстка</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML,CSS">
+    <meta name="author" content="html5css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="table.css">
+    <style>
+        body{
+            background-color: rgb(239, 246, 255);
+            overflow-x:hidden;
+        }
+    </style>
+</head>
+<body>
+    <table class="main" border="0">
+        <tbody>
+            <col class="col">
+            <col class="coln">
+            <col class="colm">
+            <tr>
+                <td colspan="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eaque, a dolorem quos perspiciatis quam molestias? Ad perspiciatis adipisci, 
+                    mollitia harum quod praesentium neque enim inventore nesciunt, obcaecati minus voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo 
+                    odit dolores quos temporibus nihil pariatur quia totam quasi, adipisci quidem, iure debitis minima reiciendis suscipit molestias esse, impedit architecto! 
+                    Veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum exercitationem sequi dolor molestias, nisi quaerat laborum quas eum vitae cumque. 
+                    Nesciunt itaque laudantium rem natus voluptate fugiat animi numquam eius?</td>
+                <td rowspan="4" valign='top'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, libero eum fuga numquam iusto natus aut rerum. Maiores esse eveniet officia. Possimus illo necessitatibus cum voluptas, itaque repellendus eum ipsum magnam eveniet minima provident aliquam placeat pariatur quia aliquid, fugiat omnis quaerat. Accusamus quam hic esse, delectus dolorum consectetur! Dolor fugit, itaque facere harum molestiae optio dolore facilis enim incidunt nobis commodi repellendus numquam labore sit vero eveniet, quis quod iusto omnis fuga? Adipisci facilis omnis beatae recusandae officiis modi facere illo tempore, a fuga. Blanditiis reiciendis sint corrupti maiores qui earum, rerum nostrum odio accusantium exercitationem, distinctio voluptatum eum?</td>
+            </tr>
+            <tr>
+                <td width="100px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio harum adipisci modi dolorum, nesciunt sapiente dolor doloribus quas. Animi, atque!</td>
+                <td rowspan="3">
+                    <h1 class="html">HTML</h1>
+            <h2 class="html">Table</h2>
+            <table class="table1" border="5">
+                <thead>
+                <tr>
+                    <th colspan=2><i>Личная информация</i></th>
+                    <th colspan=2><i>Служебная информация</i></th>
+                </tr>
+                <tr class="txt1"> 
+                    <th>Фамилия</th>
+                    <th>Фото</th>
+                    <th>Место работы</th>
+                    <th>Адрес</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th rowspan=3> Иванов</th>
+                    <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </th>
+                    <th>МГТУ</th>
+                    <th rowspan=2> Баженова,4</th>
+                </tr>
+                <tr>
+                    <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </th>  
+                    <th>МГТУ</th>
+                </tr>
+                <tr>
+                    <th>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th> 
+                    <th colspan=2>Безработный </th>
+                </tr>
+                <tr>
+                    <th><br><br><br><br></th> 
+                    <th><br><br><br><br></th>
+                    <th colspan=2><br><br><br><br></th>    
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr><th colspan=4>Увлечения </th></tr>
+                <tr> <th colspan=4 Align=left >&nbsp &nbsp &nbsp &nbsp &nbsp 1.Охота <br>&nbsp &nbsp &nbsp &nbsp &nbsp 2.Рыбалка<br>&nbsp &nbsp &nbsp &nbsp &nbsp 3.Театр<br></th>
+                </tr>
+                </tfoot>
+            </table>
+            <h2 class="html"><b>Table 2</b></h2>
+            <table class="table2" border=2>
+                <thead>
+                <tr>
+                    <th colspan=2>
+                        <marquee slide direction=left><u>Путешествие по Европе</u><br></marquee>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>   
+                    <td>
+                        <ol type="1"><li>Европа<br>
+                            1.1. Франция</li>
+                        <ul class="list">
+                            <li>Париж</li>
+                            <li>Марсель</li>
+                            <li>Бордо</li>
+                        </ul>
+                            1.2. Германия
+                        <ul class="list">
+                            <li>Мюнхен</li>
+                            <li>Дрезден</li>
+                        </ul>
+                        <br>
+                        <li>Европа<br>
+                            2.1. Испания</li>
+                        <ul type="disc">
+                            <li>Мадрид</li>
+                            <li>Барселона</li>
+                            <li>Салоу</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <li style="list-style: decimal" value="3">Европа<br>
+                            3.1. Италия</li>
+                        <ul type="square">
+                            <li>Рим</li>
+                            <li>Венеция</li>
+                            <li>Флоренция</li>
+                        </ul>
+                        <br>
+                        <br>
+                        <center><img id="img1" src="img2.jpg" alt="Путешествие по Европе" title="Путешествие по Европе"></center>
+                    </td>
+                </ol>
+                </tr>
+                </tbody>
+            </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat placeat incidunt assumenda, earum quidem quis dolorum minima exercitationem veritatis dolorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos totam sapiente aut ducimus eos excepturi accusamus, error maxime ratione non?</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+.main{
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    table-layout: fixed;
+}
+.col{
+    width: 100px;
+}
+.coln{
+    width: 60%;
+}
+.colm{
+    width: 35%;
+    overflow: hidden;
+}
+.main td, th{
+    text-align: left;
+    border: 0px solid #ccc;
+    background: #d1deff;
+}
+.html{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+table{
+    margin: auto;
+}
+.table1{ 
+    position: relative;
+    width: 500px;
+    border: 4px solid rgb(31, 89, 196);
+    border-top: 7px solid rgb(31, 89, 196);
+	border-collapse: collapse;
+}
+.table1 thead th{ 
+    background: rgb(221, 233, 255);
+}
+.table1 th{
+	padding: 5px;
+	background: #eff3fd;
+	border: 2px solid rgb(31, 89, 196);
+}
+.table1 tr {
+	padding: 5px;
+	border-bottom: 2px solid rgb(31, 89, 196);
+}
+.table1 th:hover{
+	background: rgb(221, 233, 255);
+}
+.txt1{
+    color:rgb(6, 74, 199);
+}
+.table2{
+    position: relative;
+    width: 500px;
+    border: 3px dotted rgb(56, 56, 56);
+    border-collapse: collapse;
+}
+.table2 thead tr{
+    background-color: rgb(221, 233, 255);
+}
+.table2 td,tr{
+    border: 1px solid rgb(56, 56, 56);
+}
+#img1{
+    margin: auto;
+    height:100px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(rgb(122, 131, 255),rgb(62, 194, 255));
+    -moz-border-image: -moz-linear-gradient(rgb(122, 131, 255),rgb(62, 194, 255));
+    -webkit-border-image: -webkit-linear-gradient(rgb(122, 131, 255),rgb(62, 194, 255));
+    border-image-slice: 1;
+}
+#img1:hover{
+    border: 2px solid transparent;
+    border-image: linear-gradient(rgb(167, 220, 255),rgb(27, 69, 255));
+    -moz-border-image: -moz-linear-gradient(rgb(167, 220, 255),rgb(27, 69, 255));
+    -webkit-border-image: -webkit-linear-gradient(rgb(167, 220, 255),rgb(27, 69, 255));
+    border-image-slice: 1;
+    transition: all 0.01s;
+}
