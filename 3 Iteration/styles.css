@@ -23,30 +23,44 @@
     grid-area: aside;
     width: 100%;
 }
+#aside1{
+    display: none;
+    grid-area: aside1;
+    width: 100%;
+    background-color: rgb(39, 157, 235);
+    box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
+    animation: background 3s infinite alternate;
+}
+#aside2{
+    display: none;
+    grid-area: aside2;
+    width: 100%;
+    background-color: rgb(39, 157, 235);
+    box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
+    animation: background 3s infinite alternate;
+}
+#aside3{
+    display: none;
+    grid-area: aside3;
+    width: 100%;
+    background-color: rgb(39, 157, 235);
+    box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
+    animation: background 3s infinite alternate;
+}
 .flex{ 
     display: flex; 
     flex-direction: row;
-    justify-content: center; 
+    justify-content: space-between; 
+
 }
 .flex > .item{
     width: 100px;
     height: 10vw;
-    margin: 0 20px;
     overflow: hidden;
     background-color: rgb(39, 157, 235);
+    box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
+    animation: background 3s infinite alternate;
 }
-/*
-#aside2{
-    grid-area: aside2;
-    width: 100%;
-    text-align: center;
-}
-#aside3{
-    grid-area: aside3;
-    width: 100%;
-    text-align: center;
-}
-*/
 #pageMain{
     grid-area: main;
 }
@@ -57,6 +71,12 @@
 html, body{
     margin:0;
     padding:0;
+}
+@keyframes background{
+    50%{
+        background: skyblue;
+        box-shadow: 0 -200px 100px -100px rgb(238, 109, 255) inset;
+    }
 }
 .menu{
     display: grid;
@@ -269,9 +289,9 @@ ul li{
         grid-template-rows: 300px 1fr 1fr 1fr;
         grid-template-areas: 
             "section section nav"
-            "aside main nav"
-            "aside main nav"
-            "aside main nav";
+            "aside1 main nav"
+            "aside2 main nav"
+            "aside3 main nav";
         grid-column-gap: 15px;
         grid-row-gap: 40px;
     }
@@ -279,9 +299,23 @@ ul li{
         grid-area: section;
         overflow-y: scroll;
     }
+
+    #aside{
+        display: none;
+    }
+    #aside1{
+        display: block;
+    }
+    #aside2{
+        display: block;
+    }
+    #aside3{
+        display: block;
+    }
     .flex{ 
         display: flex; 
         flex-direction: column;
+        justify-content: center;
         align-items: stretch;
     }
     .flex > .item{
