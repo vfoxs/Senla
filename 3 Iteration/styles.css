@@ -1,11 +1,11 @@
 #grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px 1fr 10vw 1fr;
+    grid-template-rows: 50px 1fr 12vw 1fr;
     grid-template-areas: 
         "nav nav nav"
         "section section section"
-        "aside aside aside"
+        "aside1 aside2 aside3"
         "main main main";
     height: 100vw;
     position: relative;
@@ -14,53 +14,60 @@
 }
 #mainNav{
     grid-area: nav;
-    
 }
 #pageSection{
     grid-area: section;
 }
 #aside{
-    grid-area: aside;
-    width: 100%;
+    justify-content: space-between;
 }
 #aside1{
-    display: none;
     grid-area: aside1;
-    width: 100%;
+    width: 100px;
     background-color: rgb(39, 157, 235);
     box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
     animation: background 3s infinite alternate;
+    justify-self: start;
 }
 #aside2{
-    display: none;
     grid-area: aside2;
-    width: 100%;
+    width: 100px;
     background-color: rgb(39, 157, 235);
     box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
     animation: background 3s infinite alternate;
+    justify-self: center;
 }
 #aside3{
-    display: none;
     grid-area: aside3;
-    width: 100%;
-    background-color: rgb(39, 157, 235);
-    box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
-    animation: background 3s infinite alternate;
-}
-.flex{ 
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-between; 
-
-}
-.flex > .item{
     width: 100px;
-    height: 10vw;
-    overflow: hidden;
     background-color: rgb(39, 157, 235);
     box-shadow: 0 -200px 100px -120px rgb(123, 255, 237) inset;
     animation: background 3s infinite alternate;
+    justify-self: end;
 }
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.flexImg {
+	display: flex;
+	overflow:hidden;
+}
+.item {
+	height:200px;
+	flex:20%;
+	transition: flex 300ms ease;
+	box-shadow: 0 0 19px 3px #000; margin: 1px;
+}
+.item:hover {
+ 	flex: 0.1 0.1 400px;
+	background-size: 100% 100%;
+}
+.img2 { background: url('https://picsum.photos/400/300?image=543') 0 0 no-repeat; }
+.img3 { background: url('https://picsum.photos/400/300?image=554') 0 0 no-repeat; }
+.img4 { background: url('https://picsum.photos/400/300?image=542') 0 0 no-repeat; }
+.img5 { background: url('https://picsum.photos/400/300?image=641') 0 0 no-repeat; }
 #pageMain{
     grid-area: main;
 }
@@ -280,7 +287,6 @@ ul li{
 }
 
 @media screen and (max-width: 1280px) {
-    
 }
 
 @media screen and (min-width: 1280px) {
@@ -298,29 +304,6 @@ ul li{
     #pageSection{
         grid-area: section;
         overflow-y: scroll;
-    }
-
-    #aside{
-        display: none;
-    }
-    #aside1{
-        display: block;
-    }
-    #aside2{
-        display: block;
-    }
-    #aside3{
-        display: block;
-    }
-    .flex{ 
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-    }
-    .flex > .item{
-        margin: 0 0 40px 0;
-        height: 1fr;
     }
     .menu{
         display: grid;
@@ -343,4 +326,9 @@ ul li{
         border-bottom: 1.5px solid rgb(103, 156, 255);
     }
     
+}
+@media screen and (max-width: 950px) {
+    #aside1, #aside2, #aside3{
+       overflow-x: hidden;
+}
 }
