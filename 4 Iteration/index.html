@@ -30,7 +30,7 @@
                 <h4>Строки</h4>
                 <form name="forma1">
                     Введите текст:<br>
-                    <textarea name="textin" rows="4" cols="50" onclick="blockClick(this)"></textarea><br><br>
+                    <textarea name="textin" rows="4" cols="50" onclick="formClick(this)"></textarea><br><br>
                     <input type="button" value="Определить" class="but" onClick="numword(forma1);">
                     <input type="reset" value="Отменить" class="but"><br><br>
                     Количество символов в тексте: <input type="text" size="10" name="res1" readonly><br><br>
@@ -82,7 +82,7 @@
                 </table>
             </form>
             <form name="forma3" id="form">
-                Введите температуру в градусы по Фаренгейту: <input type="number" id="temp"> 
+                Введите температуру в градусах по Цельсию: <input type="number" id="temp"> 
                 <input type="button" value="Ок" onClick="Weather(forma3);" class="but"><br>
                 На улице подьехало моложенное? <label for = "yes">Да </label>
                 <input type="radio" name="choice1" required value="true" checked>
@@ -115,7 +115,7 @@ function ReturnColor(Element){
     Element.style.backgroundColor = "rgb(255, 240, 221)";
 }
 
-function blockClick(Element) {
+function formClick(Element) {
     Element.style.border = "3px solid #9d9fff";
 };
 
