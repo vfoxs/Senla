@@ -1,0 +1,130 @@
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>Page1</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML,CSS">
+    <meta name="author" content="html5css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="flex">
+            <div class="js block1" id="block1" onmouseover="ChangeColor(this)" onmouseout="ReturnColor(this)">
+                <h4>Арифметические операции</h2>
+                <form name="forma">
+                    Введите x: <input type="number" id="x">
+                    Введите y: <input type="number" id="y">
+                    <input type="reset" value="Очистить" class="but">
+                    <br><br>
+                    <input type="button"  onclick="sumInputs()" value="Сложить" class="but"><br><br>
+                    <input type="button"  onclick="subInputs()" value="Вычесть" class="but"><br><br>
+                    <input type="button"  onclick="mulInputs()" value="Умножить" class="but"><br><br>
+                    <input type="button"  onclick="delInputs()" value="Разделить" class="but"><br><br>
+                    <input type="button"  onclick="modInputs()" value="Взять остаток от деления" class="but"><br><br>
+                    <input type="button"  onclick="powInputs()" value="Возвести в степень" class="but"><br><br>
+                </form>
+            </div>
+            <div class="js block2" id="block2" onmouseover="ChangeColor(this)" onmouseout="ReturnColor(this)">
+                <h4>Строки</h4>
+                <form name="forma1">
+                    Введите текст:<br>
+                    <textarea name="textin" rows="4" cols="50" onclick="formClick(this)"></textarea><br><br>
+                    <input type="button" value="Определить" class="but" onClick="numword(forma1);">
+                    <input type="reset" value="Отменить" class="but"><br><br>
+                    Количество символов в тексте: <input type="text" size="10" name="res1" readonly><br><br>
+                    Количество слов, содержищих цифры: <input type="text" size="10" name="res2" readonly><br><br>
+                    Количество слов, не содержищих цифры: <input type="text" size="10" name="res22" readonly><br><br>
+                    Количество цифр: <input type="text" size="10" name="res3" readonly><br><br>
+                    Данные без цифр: <input type="text" size="20" name="data1" readonly><br><br>
+                    Цифровые данные: <input type="text" size="20" name="data2" readonly><br><br>
+
+                    Введите слова: 
+                    <input type="text" size="20" name="txt1" id="input" value=""> 
+                    <input type="text" size="20" name="txt2">
+                    <div id="error"></div><br>
+                    <input type="button" value="Склеить" onClick="concWord(forma1);" class="but"> <input type="text" size="51" name="data3" readonly><br><br>
+                    <input type="button" value="Сравнить" onClick="comWord(forma1);" class="but"> <input type="text" size="50" name="data4" readonly><br><br>
+                    <input type="button" value="Экранировать" onClick="escapeRegExp(forma1);" class="but"> <input type="text" size="46" name="data5"><br><br>
+                    <input type="button" value="Шаблонизация" onClick="Word(forma1);" class="but">
+                </form>
+                <select id="city" onChange="CityChange()" class="select">
+                    <option value="city_1">Москва</option>
+                    <option value="city_2">Киев</option>
+                    <option value="city_3">Минск</option>
+                </select>
+                    <div id="city_1" style="display: none">Дом Правительства Российской Федерации<br>г. Москва, Краснопресненская набережная, 2</div>
+                    <div id="city_2" style="display: none">Дом правительства Украины<br>г. Киев, ул. Грушевского 12/2</div>
+                    <div id="city_3" style="display: none">Дом Правительства Республики Беларусь<br>г. Минск, ул. Советская, 11</div>
+                    <div id="address"></div><br>
+            </div>
+            <div class="js block3" id="block3" onmouseover="ChangeColor(this)" onmouseout="ReturnColor(this)">
+                <h4>Логические операции</h4>
+                <form name="forma2">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Цена:</td>
+                            <td><input type="number" id="price"></td>
+                            <td>Процент:</td>
+                            <td><input type="number" id="procent"></td>
+                            <td> <input type="button" value="Рассчитать" onClick="Itog(forma2);" class="but"></td>
+                        </tr>
+                        <tr>
+                            <td>Итог:</td>
+                            <td><input type="number" id="itog" readonly></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="reset" value="Сбросить" class="but"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <form name="forma3" id="form">
+                Введите температуру в градусах по Цельсию: <input type="number" id="temp"> 
+                <input type="button" value="Ок" onClick="Weather(forma3);" class="but"><br>
+                На улице подьехало моложенное? <label for = "yes">Да </label>
+                <input type="radio" name="choice1" required value="true" checked>
+                <label for = "no">Нет</label>
+                <input type="radio" name="choice1" required value="false"><br>
+                Дом в огне? <label for = "yes">Да </label>
+                <input type="radio" name="choice2" required value="true" checked>
+                <label for = "no">Нет</label>
+                <input type="radio" name="choice2" required value="false">
+            </form>
+            </div>
+            <div class="js block4" id="block4" onmouseover="ChangeColor(this)" onmouseout="ReturnColor(this)">
+                <h4>Обработка ошибок</h4>
+                    Проверка JSON файла:
+                    <input type="button" value="С ошибкой" onClick="Error();" class="but">
+                    <input type="button" value="Без ошибки" onClick="Error2();" class="but"><br><br>  
+            </div>
+            <div class="js block5" id="block5" onmouseover="ChangeColor(this)" onmouseout="ReturnColor(this)">
+                <h4>Работа с массивом</h4>
+                <form name="forma4" id="form">
+                    <span>Добавьте питомца:</span><br><br>
+                    <b>Имя:</b> <input type="text" id="nameAnimal"><br><br>
+                    <b>Тип:</b> <select id="typeAnimal" class="select"><br><br>
+                            <option value="Кот">Кот</option>
+                            <option value="Собака">Собака</option>
+                            <option value="Хомяк">Хомяк</option>
+                            <option value="Черепаха">Черепаха</option>
+                            <option value="Попугай">Попугай</option>
+                        </select><br><br>
+                    <b>Возраст:</b> <input type="number" id="ageAnimal"><br><br>
+                    <input type="button" value="Добавить" onClick="arr(forma4);" class="but"><br><br>
+
+                    <div class="listAnimals"><center>Список питомцев</center>
+                        <div class="list"></div>
+                    </div>
+                    Массив возрастов питомцев: <input type="text" id="arrayAge"><br><br>
+                    Проверка массива методом Array.isArray: <input type="text" id="test1" readonly><br><br>
+                    Сумма всех элементов массива: <input type="text" id="test2" readonly><br><br>
+                    Трансформация массива: <input type="text" id="test3" readonly><br><br>
+                    <div class="animalSound"></div>
+                </form>
+            </div>
+    </div>
+</body>
+</html>
