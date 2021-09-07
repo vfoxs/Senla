@@ -1,6 +1,8 @@
+//Default parameter
 function sumInputs(text = "Сумма = ") {
     alert(String(text) + (Number(document.getElementById("x").value) +  Number(document.getElementById("y").value)));
 }
+//Default parameter
 function subInputs(text = "Разница = ") {
     alert(String(text) + (Number(document.getElementById("x").value) -  Number(document.getElementById("y").value)));
 }
@@ -33,7 +35,6 @@ function formClick(Element) {
     Element.style.border = "3px solid #9d9fff";
 };
 
-//События focusin/focusout
 form.addEventListener("focus", () => form.classList.add('focused'), true);
 form.addEventListener("blur", () => form.classList.remove('focused'), true);
 
@@ -144,7 +145,6 @@ function Itog(obj) {
     }
     console.log(obj.itog.value);
 }
-
 function Weather(obj) {
     let weather = {
         temperature: Number(obj.temp.value),
@@ -154,6 +154,7 @@ function Weather(obj) {
             console.log("Object weather");
         }
     };
+    //'super' keyword
     let child = {
         foo(){
             super.foo();
@@ -175,38 +176,40 @@ function Weather(obj) {
         alert('Вы должны покинуть дом.');
     }
 
+    //деструктуризация объекта
     let { temperature: temp, iceCreamVanOutside: ice, houseStatus: house} = weather;
     console.log("Температура: " + temp + ". На улице подъехало мороженное: " + ice + ". Дом горит: " + house);
 }
+
 function Error() {
     let json = "{ некорректный JSON }";
     try {
-    let user = JSON.parse(json); // ошибка
-    alert( user.name ); // не сработает
+        let user = JSON.parse(json); // ошибка
+        alert( user.name ); // не сработает
     } catch (e) {
-    alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
-    alert( e.name );
-    alert( e.message );
+        alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
+        alert( e.name );
+        alert( e.message );
     }
 }
 function Error2() {
     let json = '{"name":"John", "age": 30}';
     try {
-    let user = JSON.parse(json);
-    alert( user.name );
-    alert( user.age );
+        let user = JSON.parse(json);
+        alert( user.name );
+        alert( user.age );
     } catch (e) {
-    alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
-    alert( e.name );
-    alert( e.message );
+        alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
+        alert( e.name );
+        alert( e.message );
     }
 }
-
 function arr(obj){
     obj.arrayAge.value = "";
     document.querySelector('.list').innerHTML = "";
     document.querySelector('.animalSound').innerHTML = "";
 
+    //yield
     function* idGenerator() {
         let i = 0;
         while (true) {
@@ -215,6 +218,7 @@ function arr(obj){
       }
     const ids = idGenerator();
 
+    //массив объектов
     let animals = [
         {
             name: "Вася", 
@@ -266,9 +270,9 @@ function arr(obj){
         animals.push(new_obj);
         console.log("ID нового питомца: " + new_obj.id);
     }
-    
     document.querySelector('.listAnimals').style.display = "block";
     
+    //строковый шаблон
     animals.forEach(animal => {
         document.querySelector('.list').innerHTML += `<br>${animal.type} ${animal.name}, возраст: `;
         if ((`${animal.age}` == 1) || (`${animal.age}` == 21)) document.querySelector('.list').innerHTML += `${animal.age} год. <br>`;
@@ -279,7 +283,6 @@ function arr(obj){
             document.querySelector('.list').innerHTML += `${animal.age} года. <br>`;
         }
     });
-
     //массив возрастов
     const arrValues = [];
     for (let i = 0; i < animals.length; i++) {
@@ -292,6 +295,7 @@ function arr(obj){
     if (Array.isArray(arrValues)) obj.test1.value = "true";
     else obj.test1.value = "false";
 
+    //Function Expression
     //метод .reduce()
     const sumValues = (total, value) => total + value;
     document.getElementById("test2").value = arrValues.reduce(sumValues);
@@ -302,12 +306,13 @@ function arr(obj){
     }
     document.getElementById("test3").value = arrValues.map(Transform);
 
-    //spread/rest
+    //Spread/Rest operator
     let Spread = (x,y,z,k,l,m) => console.log("... Как оператор расширения: " + x,y,z,k,l,m);
     Spread(...arrValues);
     let Rest = (...args) => console.log("Остаточные параметры: " + args);
     Rest(1,2,3,4,5);
 
+    //Class
     class Animal {
         constructor(name) {
             this.name = name;
@@ -316,6 +321,7 @@ function arr(obj){
             document.querySelector('.animalSound').innerHTML += `Ваш питомец издает звук. `;
         }
     }
+    //наследование классов
     class Dog extends Animal {
         constructor(name) {
             super(name);
