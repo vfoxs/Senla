@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         this.classList.remove('invalid');
         error.innerHTML = "";
       }
-    };   
+    };
 });
-
 
 function sumInputs(text = "Сумма = ") {
     alert(String(text) + (Number(document.getElementById("x").value) +  Number(document.getElementById("y").value)));
@@ -381,7 +380,6 @@ function arr(obj) {
 }
 
 function updateVariables() {
-    //вывод свойств и методов объекта location
     idPost = document.getElementById("propertiesLocation"); 
     idPost.innerHTML += `<b>Все свойства и методы объекта location:</b> <br><br>`;
 
@@ -395,7 +393,7 @@ function updateVariables() {
     idPost.innerHTML += `${stringPropertiesLocation}`;
         
 }
-//методы location
+
 let newWindow;
 function openWindow() {
     newWindow = window.open('https://itchief.ru/', '', 'width=400,height=500');
@@ -409,7 +407,6 @@ function replaceWindow() {
     newWindow = window.location.replace('https://itchief.ru');
     newWindow.focus();
 }
-//свойства и методы объекта navigator
 function getInfo() {
     var nav = window.navigator;
     var parent = document.getElementsByTagName("section")[0];//хранит свойства
@@ -417,7 +414,6 @@ function getInfo() {
     var strOut = "";
     
     for(var property in nav) {
-      //property хранит строку с именем свойства из объекта nav
       console.dir(typeof property);
       strOut += "<b>" + property + "</b><p>" + nav[property] + "</p>";
     }
@@ -432,7 +428,6 @@ function hideInfo() {
     document.getElementsByTagName("section")[0].innerHTML = "";
 }
 
-//свойства и методы объекта history, получение текущего URL
 window.onpopstate = function(event) {
     console.log(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
 }
@@ -444,7 +439,6 @@ history.back();
 history.back();
 history.go(2);
 
-//свойства и методы screen
 function screenInfo1() {
     alert("Ширина - " + window.screen.width + ", Высота - " + window.screen.height);
 }
@@ -452,14 +446,12 @@ function screenInfo2() {
     alert("Ширина - " + window.screen.availWidth + ", Высота - " + window.screen.availHeight);
 }
 
-//Работа с cookie
 if (navigator.cookieEnabled === false) {
     console.log("Cookies отключены!");
 } else {
     console.log("Cookies включены!");
 }
 
-//Работа с localStorage
 localStorage.setItem('key1', 'ObjLocalStorage');
 const localValue = localStorage.getItem('key1');
 console.log(localValue);
@@ -476,7 +468,6 @@ localStorage.setItem('key2', serialObj);
 const returnObj = JSON.parse(localStorage.getItem('key2'));
 console.log(returnObj);
 
-//Работа с sessionStorage
 sessionStorage.clear();
 sessionStorage.setItem('key1', 'a');
 const data = sessionStorage.getItem('key1');
@@ -489,3 +480,39 @@ for (var i = 0; i < sessionStorage.length; i++) {
     console.log(key + ' = ' + sessionStorage[key]);
 }
 
+//запрос на получение репозиторев с помощью async/await
+async function getRepos() {
+    try {
+        document.getElementById('repos').innerHTML = "";
+        let name = document.getElementById('userName').value;
+        let respons = await fetch(`https://api.github.com/users/${name}/repos`);
+        let results = await respons.json();
+        document.getElementById('reposUser').style.display = "block";
+        results.forEach(repos => {
+            document.getElementById('repos').innerHTML += `<br>${repos.name}`;       
+        });
+        document.getElementById('repos').innerHTML += `<br>`; 
+    } catch(err) {
+        document.getElementById('reposUser').style.display = "none";
+        alert('Ошибка!');
+    }      
+}
+
+//запрос на получение репозиторев с помощью promise
+function getRepos1() {
+    document.getElementById('repos1').innerHTML = "";
+    document.getElementById('reposUser1').style.display = "block";
+    let name = document.getElementById('userName1').value;
+    fetch(`https://api.github.com/users/${name}/repos`)
+    .then(response => response.json())
+    .then(results => { 
+        results.forEach(repos => {
+            document.getElementById('repos1').innerHTML += `<br>${repos.name}`;       
+            });
+        document.getElementById('repos1').innerHTML += `<br>`;
+        }
+    ).catch(err => { 
+        document.getElementById('reposUser1').style.display = "none";
+        alert('Ошибка!'); 
+        });       
+}
