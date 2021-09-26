@@ -53,6 +53,7 @@ function ReturnColor(Element) {
 function formClick(Element) {
     Element.style.border = "3px solid #9d9fff";
 };
+
 function numword(obj) {   
     obj.res1.value = "";
     obj.res2.value = "";
@@ -147,7 +148,7 @@ function Itog(obj) {
     console.log(obj.itog.value);
 }
 function Weather(obj) {
-    let weather = {
+    const weather = {
         temperature: Number(obj.temp.value),
         iceCreamVanOutside: obj.choice1.value,
         houseStatus: obj.choice2.value,
@@ -156,7 +157,7 @@ function Weather(obj) {
         }
     };
 
-    let child = {
+    const child = {
         foo(){
             super.foo();
             console.log("Object child");
@@ -177,14 +178,14 @@ function Weather(obj) {
         alert('Вы должны покинуть дом.');
     }
 
-    let { temperature: temp, iceCreamVanOutside: ice, houseStatus: house} = weather;
+    const { temperature: temp, iceCreamVanOutside: ice, houseStatus: house} = weather;
     console.log("Температура: " + temp + ". На улице подъехало мороженное: " + ice + ". Дом горит: " + house);
 }
 
 function Error() {
-    let json = "{ некорректный JSON }";
+    const json = "{ некорректный JSON }";
     try {
-        let user = JSON.parse(json); // ошибка
+        const user = JSON.parse(json); // ошибка
         alert( user.name ); // не сработает
     } catch (e) {
         alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
@@ -193,9 +194,9 @@ function Error() {
     }
 }
 function Error2() {
-    let json = '{"name":"John", "age": 30}';
+    const json = '{"name":"John", "age": 30}';
     try {
-        let user = JSON.parse(json);
+        const user = JSON.parse(json);
         alert( user.name );
         alert( user.age );
     } catch (e) {
@@ -217,7 +218,7 @@ function arr(obj) {
       }
     const ids = idGenerator();
 
-    let animals = [
+    const animals = [
         {
             name: "Вася", 
             type: "Кот", 
@@ -259,7 +260,7 @@ function arr(obj) {
     if (Age.value == "") alert("Введите возраст питомца");
 
     if ((Age.value <= 30) && (Name.value != "") && (Age.value != "")) {
-        let new_obj = {
+        const new_obj = {
             name: Name.value, 
             type: Type.value, 
             age: Number(Age.value),
@@ -354,27 +355,27 @@ function arr(obj) {
         }
     }
 
-    let animal = new Animal(Name.value);
+    const animal = new Animal(Name.value);
     if ((Name.value != "") && (Age.value != "")) {animal.speak();}
     
     if ((Type.value == "Собака") && (Name.value != "") && (Age.value != "")) {
-        let d = new Dog(Name.value);
+        const d = new Dog(Name.value);
         d.speak();
     }
     if (Type.value == "Кот" && (Name.value != "") && (Age.value != "")) {
-        let d = new Cat(Name.value);
+        const d = new Cat(Name.value);
         d.speak();
     }
     if (Type.value == "Хомяк" && (Name.value != "") && (Age.value != "")) {
-        let d = new Hamster(Name.value);
+        const d = new Hamster(Name.value);
         d.speak();
     }
     if (Type.value == "Черепаха" && (Name.value != "") && (Age.value != "")) {
-        let d = new Turtle(Name.value);
+        const d = new Turtle(Name.value);
         d.speak();
     }
     if (Type.value == "Попугай" && (Name.value != "") && (Age.value != "")) {
-        let d = new Parrot(Name.value);
+        const d = new Parrot(Name.value);
         d.speak();
     }
 }
@@ -383,8 +384,8 @@ function updateVariables() {
     idPost = document.getElementById("propertiesLocation"); 
     idPost.innerHTML += `<b>Все свойства и методы объекта location:</b> <br><br>`;
 
-    var stringPropertiesLocation = "";
-        for (var property in location){
+    let stringPropertiesLocation = "";
+        for (let property in location){
             stringPropertiesLocation += "Свойство/метод: <strong>" + property + "</strong>. ";
             stringPropertiesLocation += "Значение: <strong>" + location[property] + "</strong> ";
             stringPropertiesLocation += "<strong>Тип: </strong>" + typeof location[property]; 
@@ -407,13 +408,14 @@ function replaceWindow() {
     newWindow = window.location.replace('https://itchief.ru');
     newWindow.focus();
 }
+
 function getInfo() {
-    var nav = window.navigator;
-    var parent = document.getElementsByTagName("section")[0];//хранит свойства
-    var div = document.createElement("div");
-    var strOut = "";
+    const nav = window.navigator;
+    const parent = document.getElementsByTagName("section")[0];//хранит свойства
+    let div = document.createElement("div");
+    let strOut = "";
     
-    for(var property in nav) {
+    for(let property in nav) {
       console.dir(typeof property);
       strOut += "<b>" + property + "</b><p>" + nav[property] + "</p>";
     }
@@ -458,7 +460,7 @@ console.log(localValue);
 localStorage.removeItem('key1');
 localStorage.clear();
 
-var obj = {
+const obj = {
     item1: 1,
     item2: [123, "abc", 3.0],
     item3: "hello"
@@ -475,8 +477,8 @@ console.log(data);
 sessionStorage.setItem('key2', 'b');
 sessionStorage.setItem('key3', 'c');
 console.log("Кол-во sessionStorage: " + sessionStorage.length);
-for (var i = 0; i < sessionStorage.length; i++) {
-    var key = sessionStorage.key(i);
+for (let i = 0; i < sessionStorage.length; i++) {
+    let key = sessionStorage.key(i);
     console.log(key + ' = ' + sessionStorage[key]);
 }
 
@@ -484,9 +486,9 @@ for (var i = 0; i < sessionStorage.length; i++) {
 async function getRepos() {
     try {
         document.getElementById('repos').innerHTML = "";
-        let name = document.getElementById('userName').value;
-        let respons = await fetch(`https://api.github.com/users/${name}/repos`);
-        let results = await respons.json();
+        const name = document.getElementById('userName').value;
+        const respons = await fetch(`https://api.github.com/users/${name}/repos`);
+        const results = await respons.json();
         document.getElementById('reposUser').style.display = "block";
         results.forEach(repos => {
             document.getElementById('repos').innerHTML += `<br>${repos.name}`;       
@@ -502,9 +504,13 @@ async function getRepos() {
 function getRepos1() {
     document.getElementById('repos1').innerHTML = "";
     document.getElementById('reposUser1').style.display = "block";
-    let name = document.getElementById('userName1').value;
-    fetch(`https://api.github.com/users/${name}/repos`)
-    .then(response => response.json())
+    const name = document.getElementById('userName1').value;
+    
+    const promise = new Promise((resolve, reject) => {
+        resolve(fetch(`https://api.github.com/users/${name}/repos`))
+    });
+
+    promise.then(response => response.json())
     .then(results => { 
         results.forEach(repos => {
             document.getElementById('repos1').innerHTML += `<br>${repos.name}`;       
