@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         this.classList.remove('invalid');
         error.innerHTML = "";
       }
-    };   
+    };
 });
-
 
 function sumInputs(text = "Сумма = ") {
     alert(String(text) + (Number(document.getElementById("x").value) +  Number(document.getElementById("y").value)));
@@ -54,6 +53,7 @@ function ReturnColor(Element) {
 function formClick(Element) {
     Element.style.border = "3px solid #9d9fff";
 };
+
 function numword(obj) {   
     obj.res1.value = "";
     obj.res2.value = "";
@@ -148,7 +148,7 @@ function Itog(obj) {
     console.log(obj.itog.value);
 }
 function Weather(obj) {
-    let weather = {
+    const weather = {
         temperature: Number(obj.temp.value),
         iceCreamVanOutside: obj.choice1.value,
         houseStatus: obj.choice2.value,
@@ -157,7 +157,7 @@ function Weather(obj) {
         }
     };
 
-    let child = {
+    const child = {
         foo(){
             super.foo();
             console.log("Object child");
@@ -178,14 +178,14 @@ function Weather(obj) {
         alert('Вы должны покинуть дом.');
     }
 
-    let { temperature: temp, iceCreamVanOutside: ice, houseStatus: house} = weather;
+    const { temperature: temp, iceCreamVanOutside: ice, houseStatus: house} = weather;
     console.log("Температура: " + temp + ". На улице подъехало мороженное: " + ice + ". Дом горит: " + house);
 }
 
 function Error() {
-    let json = "{ некорректный JSON }";
+    const json = "{ некорректный JSON }";
     try {
-        let user = JSON.parse(json); // ошибка
+        const user = JSON.parse(json); // ошибка
         alert( user.name ); // не сработает
     } catch (e) {
         alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз." );
@@ -194,9 +194,9 @@ function Error() {
     }
 }
 function Error2() {
-    let json = '{"name":"John", "age": 30}';
+    const json = '{"name":"John", "age": 30}';
     try {
-        let user = JSON.parse(json);
+        const user = JSON.parse(json);
         alert( user.name );
         alert( user.age );
     } catch (e) {
@@ -218,7 +218,7 @@ function arr(obj) {
       }
     const ids = idGenerator();
 
-    let animals = [
+    const animals = [
         {
             name: "Вася", 
             type: "Кот", 
@@ -260,7 +260,7 @@ function arr(obj) {
     if (Age.value == "") alert("Введите возраст питомца");
 
     if ((Age.value <= 30) && (Name.value != "") && (Age.value != "")) {
-        let new_obj = {
+        const new_obj = {
             name: Name.value, 
             type: Type.value, 
             age: Number(Age.value),
@@ -355,38 +355,37 @@ function arr(obj) {
         }
     }
 
-    let animal = new Animal(Name.value);
+    const animal = new Animal(Name.value);
     if ((Name.value != "") && (Age.value != "")) {animal.speak();}
     
     if ((Type.value == "Собака") && (Name.value != "") && (Age.value != "")) {
-        let d = new Dog(Name.value);
+        const d = new Dog(Name.value);
         d.speak();
     }
     if (Type.value == "Кот" && (Name.value != "") && (Age.value != "")) {
-        let d = new Cat(Name.value);
+        const d = new Cat(Name.value);
         d.speak();
     }
     if (Type.value == "Хомяк" && (Name.value != "") && (Age.value != "")) {
-        let d = new Hamster(Name.value);
+        const d = new Hamster(Name.value);
         d.speak();
     }
     if (Type.value == "Черепаха" && (Name.value != "") && (Age.value != "")) {
-        let d = new Turtle(Name.value);
+        const d = new Turtle(Name.value);
         d.speak();
     }
     if (Type.value == "Попугай" && (Name.value != "") && (Age.value != "")) {
-        let d = new Parrot(Name.value);
+        const d = new Parrot(Name.value);
         d.speak();
     }
 }
 
 function updateVariables() {
-    //вывод свойств и методов объекта location
     idPost = document.getElementById("propertiesLocation"); 
     idPost.innerHTML += `<b>Все свойства и методы объекта location:</b> <br><br>`;
 
-    var stringPropertiesLocation = "";
-        for (var property in location){
+    let stringPropertiesLocation = "";
+        for (let property in location){
             stringPropertiesLocation += "Свойство/метод: <strong>" + property + "</strong>. ";
             stringPropertiesLocation += "Значение: <strong>" + location[property] + "</strong> ";
             stringPropertiesLocation += "<strong>Тип: </strong>" + typeof location[property]; 
@@ -395,7 +394,7 @@ function updateVariables() {
     idPost.innerHTML += `${stringPropertiesLocation}`;
         
 }
-//методы location
+
 let newWindow;
 function openWindow() {
     newWindow = window.open('https://itchief.ru/', '', 'width=400,height=500');
@@ -409,15 +408,14 @@ function replaceWindow() {
     newWindow = window.location.replace('https://itchief.ru');
     newWindow.focus();
 }
-//свойства и методы объекта navigator
+
 function getInfo() {
-    var nav = window.navigator;
-    var parent = document.getElementsByTagName("section")[0];//хранит свойства
-    var div = document.createElement("div");
-    var strOut = "";
+    const nav = window.navigator;
+    const parent = document.getElementsByTagName("section")[0];//хранит свойства
+    let div = document.createElement("div");
+    let strOut = "";
     
-    for(var property in nav) {
-      //property хранит строку с именем свойства из объекта nav
+    for(let property in nav) {
       console.dir(typeof property);
       strOut += "<b>" + property + "</b><p>" + nav[property] + "</p>";
     }
@@ -432,7 +430,6 @@ function hideInfo() {
     document.getElementsByTagName("section")[0].innerHTML = "";
 }
 
-//свойства и методы объекта history, получение текущего URL
 window.onpopstate = function(event) {
     console.log(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
 }
@@ -444,7 +441,6 @@ history.back();
 history.back();
 history.go(2);
 
-//свойства и методы screen
 function screenInfo1() {
     alert("Ширина - " + window.screen.width + ", Высота - " + window.screen.height);
 }
@@ -452,21 +448,19 @@ function screenInfo2() {
     alert("Ширина - " + window.screen.availWidth + ", Высота - " + window.screen.availHeight);
 }
 
-//Работа с cookie
 if (navigator.cookieEnabled === false) {
     console.log("Cookies отключены!");
 } else {
     console.log("Cookies включены!");
 }
 
-//Работа с localStorage
 localStorage.setItem('key1', 'ObjLocalStorage');
 const localValue = localStorage.getItem('key1');
 console.log(localValue);
 localStorage.removeItem('key1');
 localStorage.clear();
 
-var obj = {
+const obj = {
     item1: 1,
     item2: [123, "abc", 3.0],
     item3: "hello"
@@ -476,7 +470,6 @@ localStorage.setItem('key2', serialObj);
 const returnObj = JSON.parse(localStorage.getItem('key2'));
 console.log(returnObj);
 
-//Работа с sessionStorage
 sessionStorage.clear();
 sessionStorage.setItem('key1', 'a');
 const data = sessionStorage.getItem('key1');
@@ -484,8 +477,44 @@ console.log(data);
 sessionStorage.setItem('key2', 'b');
 sessionStorage.setItem('key3', 'c');
 console.log("Кол-во sessionStorage: " + sessionStorage.length);
-for (var i = 0; i < sessionStorage.length; i++) {
-    var key = sessionStorage.key(i);
+for (let i = 0; i < sessionStorage.length; i++) {
+    let key = sessionStorage.key(i);
     console.log(key + ' = ' + sessionStorage[key]);
 }
 
+//cookie
+function set_cookie(name, value, expires_year, expires_month, expires_day, path, domain, secure) {
+    let cookie_string = name + "=" + escape(value);
+    if (expires_year) {
+        const expires = new Date(expires_year, expires_month, expires_day);
+        cookie_string += "; expires=" + expires.toGMTString();
+    }
+    if (path) cookie_string += "; path=" + escape(path);
+    if (domain) cookie_string += "; domain=" + escape(domain);
+    if (secure) cookie_string += "; secure";
+    document.cookie = cookie_string;
+}
+
+function get_cookie(cookie_name){
+    const results = document.cookie.match( "(^|;)?" + cookie_name + "=([^;]*)(;|$)" );
+    if (results) 
+        return (unescape (results[2]));
+    else 
+        return null;
+}
+
+if (! get_cookie ("username")){
+    let username = prompt ( "Пожалуйста, введите Ваше имя", "" );
+    if (username){
+        let current_date = new Date;
+        let cookie_year = current_date.getFullYear( ) + 1;
+        let cookie_month = current_date.getMonth( );
+        let cookie_day = current_date.getDate( );
+        set_cookie("username", username, cookie_year, cookie_month, cookie_day);
+        document.location.reload();
+    }
+} 
+else {
+    let username = get_cookie("username");
+    alert(`Привет ${username}!`);
+}

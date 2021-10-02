@@ -482,6 +482,43 @@ for (let i = 0; i < sessionStorage.length; i++) {
     console.log(key + ' = ' + sessionStorage[key]);
 }
 
+//cookie
+function set_cookie(name, value, expires_year, expires_month, expires_day, path, domain, secure) {
+    let cookie_string = name + "=" + escape(value);
+    if (expires_year) {
+        const expires = new Date(expires_year, expires_month, expires_day);
+        cookie_string += "; expires=" + expires.toGMTString();
+    }
+    if (path) cookie_string += "; path=" + escape(path);
+    if (domain) cookie_string += "; domain=" + escape(domain);
+    if (secure) cookie_string += "; secure";
+    document.cookie = cookie_string;
+}
+
+function get_cookie(cookie_name){
+    const results = document.cookie.match( "(^|;)?" + cookie_name + "=([^;]*)(;|$)" );
+    if (results) 
+        return (unescape (results[2]));
+    else 
+        return null;
+}
+
+if (! get_cookie ("username")){
+    let username = prompt ( "Пожалуйста, введите Ваше имя", "" );
+    if (username){
+        let current_date = new Date;
+        let cookie_year = current_date.getFullYear( ) + 1;
+        let cookie_month = current_date.getMonth( );
+        let cookie_day = current_date.getDate( );
+        set_cookie("username", username, cookie_year, cookie_month, cookie_day);
+        document.location.reload();
+    }
+} 
+else {
+    let username = get_cookie("username");
+    alert(`Привет ${username}!`);
+}
+
 //запрос на получение репозиторев с помощью async/await
 async function getRepos() {
     try {
@@ -501,24 +538,26 @@ async function getRepos() {
 }
 
 //запрос на получение репозиторев с помощью promise
+function repos1() {
+    const promise = new Promise((resolve, reject) => {
+        const name = document.getElementById('userName1').value;
+        fetch(`https://api.github.com/users/${name}/repos`)
+        .then(response => response.json())
+        .then(results => { 
+            results.forEach(repos => {
+                document.getElementById('repos1').innerHTML += `<br>${repos.name}`;       
+                });
+            document.getElementById('repos1').innerHTML += `<br>`;
+            })
+        .catch(err => { 
+            document.getElementById('reposUser1').style.display = "none";
+            alert('Ошибка!'); 
+        }); 
+    });
+}
+
 function getRepos1() {
     document.getElementById('repos1').innerHTML = "";
     document.getElementById('reposUser1').style.display = "block";
-    const name = document.getElementById('userName1').value;
-    
-    const promise = new Promise((resolve, reject) => {
-        resolve(fetch(`https://api.github.com/users/${name}/repos`))
-    });
-
-    promise.then(response => response.json())
-    .then(results => { 
-        results.forEach(repos => {
-            document.getElementById('repos1').innerHTML += `<br>${repos.name}`;       
-            });
-        document.getElementById('repos1').innerHTML += `<br>`;
-        }
-    ).catch(err => { 
-        document.getElementById('reposUser1').style.display = "none";
-        alert('Ошибка!'); 
-        });       
+    repos1();
 }
